@@ -26,15 +26,15 @@ public class HelloLog {
         logger.printf(Level.INFO,"Test: %s", userInput);
     }
 
-   public static byte[] bad1(String password) throws NoSuchAlgorithmException {
+    public static byte[] bad1(String password) throws NoSuchAlgorithmException {
      // ruleid: use-of-md5
      MessageDigest md5Digest = MessageDigest.getInstance("MD5");
      md5Digest.update(password.getBytes());
      byte[] hashValue = md5Digest.digest();
      return hashValue;
-   }
+    }
 
-   public static byte[] bad2(String password) {
+    public static byte[] bad2(String password) {
       // ruleid: use-of-sha1
       MessageDigest sha1Digest = MessageDigest.getInstance("SHA1");
       sha1Digest.update(password.getBytes());
@@ -42,7 +42,7 @@ public class HelloLog {
       return hashValue;
     }
 
-   public static void bad1() {
+    public static void bad1() {
      try {
         // ruleid: java-jwt-hardcoded-secret
         Algorithm algorithm = Algorithm.HMAC256("secret");
@@ -52,5 +52,5 @@ public class HelloLog {
         } catch (JWTCreationException exception){
             //Invalid Signing configuration / Couldn't convert Claims.
         }
-   }
+    }
 }
