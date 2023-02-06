@@ -42,7 +42,7 @@ public class HelloLog {
       return hashValue;
     }
 
-   private static void bad1() {
+   public static void bad1() {
      try {
         // ruleid: java-jwt-hardcoded-secret
         Algorithm algorithm = Algorithm.HMAC256("secret");
