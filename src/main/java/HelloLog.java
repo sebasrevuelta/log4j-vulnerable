@@ -34,6 +34,14 @@ public class HelloLog {
      return hashValue;
    }
 
+   public static byte[] bad2(String password) {
+      // ruleid: use-of-sha1
+      MessageDigest sha1Digest = MessageDigest.getInstance("SHA1");
+      sha1Digest.update(password.getBytes());
+      byte[] hashValue = sha1Digest.digest();
+      return hashValue;
+    }
+
    private static void bad1() {
      try {
         // ruleid: java-jwt-hardcoded-secret
