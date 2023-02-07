@@ -34,7 +34,7 @@ public class HelloLog {
      return hashValue;
     }
 
-    public static byte[] bad2(String password) {
+    public static byte[] bad2(String password) throws java.security.NoSuchAlgorithmException {
       // ruleid: use-of-sha1
       MessageDigest sha1Digest = MessageDigest.getInstance("SHA1");
       sha1Digest.update(password.getBytes());
