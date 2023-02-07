@@ -27,19 +27,19 @@ public class HelloLog {
     }
 
     public static byte[] bad1(String password) throws NoSuchAlgorithmException {
-     // ruleid: use-of-md5
-     MessageDigest md5Digest = MessageDigest.getInstance("MD5");
-     md5Digest.update(password.getBytes());
-     byte[] hashValue = md5Digest.digest();
-     return hashValue;
+        // ruleid: use-of-md5
+        MessageDigest md5Digest = MessageDigest.getInstance("MD5");
+        md5Digest.update(password.getBytes());
+        byte[] hashValue = md5Digest.digest();
+        return hashValue;
     }
 
     public static byte[] bad2(String password) throws java.security.NoSuchAlgorithmException {
-      // ruleid: use-of-sha1
-      MessageDigest sha1Digest = MessageDigest.getInstance("SHA1");
-      sha1Digest.update(password.getBytes());
-      byte[] hashValue = sha1Digest.digest();
-      return hashValue;
+        // ruleid: use-of-sha1
+        MessageDigest sha1Digest = MessageDigest.getInstance("SHA1");
+        sha1Digest.update(password.getBytes());
+        byte[] hashValue = sha1Digest.digest();
+        return hashValue;
     }
 
     public static void bad1() {
