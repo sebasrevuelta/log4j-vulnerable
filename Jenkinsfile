@@ -1,5 +1,6 @@
 pipeline {
-  agent { docker { image 'python:3.10.7-alpine' } }
+  // agent { docker { image 'python:3.10.7-alpine' } }
+  agent any
     environment {
       // The following variable is required for a Semgrep App-connected scan:
       SEMGREP_APP_TOKEN = credentials('SEMGREP_APP_TOKEN')
@@ -22,6 +23,7 @@ pipeline {
     stages {
       stage('Semgrep-Scan') {
         steps {
+          sh 'echo $PATH'
           sh 'echo $SEMGREP_APP_TOKEN'
           sh 'pip3 install semgrep'
           sh 'semgrep ci'
