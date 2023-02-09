@@ -22,6 +22,7 @@ pipeline {
     stages {
       stage('Semgrep-Scan') {
         steps {
+          sh 'echo $SEMGREP_APP_TOKEN'
           sh 'pip3 install semgrep'
           sh 'semgrep ci'
       }
