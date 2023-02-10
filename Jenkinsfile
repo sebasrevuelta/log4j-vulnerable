@@ -28,7 +28,7 @@ pipeline {
           sh 'echo ${GIT_COMMIT}'
           //sh 'export PATH=$PATH:$HOME/.local/bin'
           sh 'pip3 install semgrep'
-          sh 'semgrep scan --config auto'
+          sh 'semgrep scan --config p/java'
       }
     }
   }
