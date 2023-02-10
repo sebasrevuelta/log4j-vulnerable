@@ -45,4 +45,5 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: mavendeptree
-      - run: semgrep ci --sarif --output=semgrep.sarif
+      #- run: semgrep ci --sarif --output=semgrep.sarif
+      - run: semgrep ci
