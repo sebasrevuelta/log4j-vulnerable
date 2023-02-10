@@ -28,7 +28,7 @@ public class HelloLog {
 
     public static byte[] bad1(String password) throws NoSuchAlgorithmException {
         // ruleid: use-of-md5
-        MessageDigest md5Digest = MessageDigest.getInstance("MD5");
+        MessageDigest md5Digest = MessageDigest.getInstance("MD5"); // nosemgrep
         md5Digest.update(password.getBytes());
         byte[] hashValue = md5Digest.digest();
         return hashValue;
