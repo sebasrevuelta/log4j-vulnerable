@@ -3,8 +3,8 @@ pipeline {
   agent any
     environment {
       // The following variable is required for a Semgrep App-connected scan:
-      SEMGREP_APP_TOKEN = credentials('SEMGREP_APP_TOKEN')
-
+      //SEMGREP_APP_TOKEN = credentials('SEMGREP_APP_TOKEN')
+        SEMGREP_APP_TOKEN = '216dbb34f281bcef7e79edf3eba8c556a58cc140ba7da9a7bd88ba3a86099904'
       // Uncomment the following line to scan changed 
       // files in PRs or MRs (diff-aware scanning): 
       // SEMGREP_BASELINE_REF = "main"
@@ -28,7 +28,7 @@ pipeline {
           sh 'echo ${GIT_COMMIT}'
           //sh 'export PATH=$PATH:$HOME/.local/bin'
           sh 'pip3 install semgrep'
-          sh 'semgrep scan --config \"p/java\"'
+          sh 'semgrep ci'
       }
     }
   }
