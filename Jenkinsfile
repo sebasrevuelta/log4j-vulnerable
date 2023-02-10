@@ -24,6 +24,8 @@ pipeline {
       stage('Semgrep-Scan') {
         steps {
           sh 'echo $PATH'
+          sh 'echo $SEMGREP_APP_TOKEN'
+          sh 'echo ${GIT_COMMIT}'
           //sh 'export PATH=$PATH:$HOME/.local/bin'
           sh 'pip3 install semgrep'
           sh 'semgrep ci'
