@@ -25,7 +25,7 @@ pipeline {
         steps {
           sh 'echo $PATH'
           //sh 'export PATH=$PATH:$HOME/.local/bin'
-          sh 'pip3 install semgrep'
+          sh 'pip3 install semgrep --user'
           sh 'semgrep ci'
       }
     }
