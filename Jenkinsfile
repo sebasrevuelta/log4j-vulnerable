@@ -1,6 +1,6 @@
 pipeline {
-  agent { docker { image 'python:3.9-bullseye' } }
-  //agent any
+  //agent { docker { image 'python:3.9-bullseye' } }
+  agent any
     environment {
       // The following variable is required for a Semgrep App-connected scan:
       SEMGREP_APP_TOKEN = credentials('SEMGREP_APP_TOKEN')
@@ -25,7 +25,7 @@ pipeline {
         steps {
           sh 'echo $PATH'
           //sh 'export PATH=$PATH:$HOME/.local/bin'
-          sh 'pip3 install semgrep --user'
+          sh 'pip3 install semgrep'
           sh 'semgrep ci'
       }
     }
