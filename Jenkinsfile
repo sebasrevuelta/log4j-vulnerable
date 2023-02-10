@@ -1,5 +1,5 @@
 pipeline {
-  agent { docker { image 'returntocorp/semgrep' } }
+  agent { docker { image 'python:3.10.7-alpine' } }
   //agent any
     environment {
       // The following variable is required for a Semgrep App-connected scan:
@@ -23,9 +23,9 @@ pipeline {
     stages {
       stage('Semgrep-Scan') {
         steps {
-          //sh 'echo $PATH'
+          sh 'echo $PATH'
           //sh 'export PATH=$PATH:$HOME/.local/bin'
-          //sh 'pip3 install semgrep'
+          sh 'pip3 install semgrep'
           sh 'semgrep ci'
       }
     }
