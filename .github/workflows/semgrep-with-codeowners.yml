@@ -24,4 +24,4 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: mavendeptree
-      - run: semgrep ci --json --output findings.json
+      - run: semgrep ci --oss-only --json --output findings.json
