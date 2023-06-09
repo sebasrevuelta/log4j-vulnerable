@@ -21,10 +21,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: semgrep ci --oss-only --json --output findings.json
-      - uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
-      - uses: jannekem/run-python-script-action@v1
-        with:
-          script: |
-            print("Hello World from the Devops repo!")
+      - name: Hello World
+        run: python ./hello_world.py
+        shell: sh
