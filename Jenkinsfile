@@ -14,11 +14,13 @@ pipeline {
     stages {
 
       stage ('Build') {
-          withMaven {
-            sh "mvn -version"
-            sh "mvn clean verify"
-            sh "mvn dependency:tree -DoutputFile=maven_dep_tree.txt"
-          } 
+        steps {
+            withMaven {
+              sh "mvn -version"
+              sh "mvn clean verify"
+              sh "mvn dependency:tree -DoutputFile=maven_dep_tree.txt"
+            }
+        }
       }
       
       stage('Semgrep-Scan') {
