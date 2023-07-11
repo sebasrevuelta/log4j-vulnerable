@@ -13,7 +13,7 @@ pipeline {
     }
     stages {
 
-      stage ('Build') {
+      stage ('Generate-LockFile') {
         steps {
             withMaven(maven: 'maven') {
               sh "mvn dependency:tree -DoutputFile=maven_dep_tree.txt"
