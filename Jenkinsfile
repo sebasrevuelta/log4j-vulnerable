@@ -16,8 +16,6 @@ pipeline {
       stage ('Build') {
         steps {
             withMaven(maven: 'maven') {
-              sh "mvn -version"
-              sh "mvn clean verify"
               sh "mvn dependency:tree -DoutputFile=maven_dep_tree.txt"
             }
         }
