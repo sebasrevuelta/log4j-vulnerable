@@ -17,7 +17,8 @@ pipeline {
                 script {
                     if (env.GIT_BRANCH == 'main') {
                         echo "Hello from ${env.GIT_BRANCH} branch"
-                        mvn -version
+                        sh "mvn -version"
+                        sh "mvn dependency:tree -DoutputFile=maven_dep_tree.txt"
                         semgrepFullScan()
                     }  else {
                         sh "echo 'Hello from ${env.GIT_BRANCH} branch'"
