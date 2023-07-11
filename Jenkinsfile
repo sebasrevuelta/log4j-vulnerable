@@ -25,10 +25,8 @@ pipeline {
         steps {
                 script {
                     if (env.GIT_BRANCH == 'main') {
-                        echo "Hello from ${env.GIT_BRANCH} branch"
                         semgrepFullScan()
                     }  else {
-                        sh "echo 'Hello from ${env.GIT_BRANCH} branch'"
                         sh "git fetch origin +ref/heads/*:refs/remotes/origin/*" 
                         semgrepPullRequestScan()
                     }
