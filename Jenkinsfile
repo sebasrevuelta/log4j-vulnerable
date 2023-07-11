@@ -12,13 +12,20 @@ pipeline {
       SEMGREP_PR_ID = "${env.CHANGE_ID}"
     }
     stages {
+
+      stage ('Build') {
+          withMaven {
+            sh "mvn -version"
+            sh "mvn clean verify"
+            sh "mvn dependency:tree -DoutputFile=maven_dep_tree.txt"
+          } 
+      }
+      
       stage('Semgrep-Scan') {
         steps {
                 script {
                     if (env.GIT_BRANCH == 'main') {
                         echo "Hello from ${env.GIT_BRANCH} branch"
-                        sh "mvn -version"
-                        sh "mvn dependency:tree -DoutputFile=maven_dep_tree.txt"
                         semgrepFullScan()
                     }  else {
                         sh "echo 'Hello from ${env.GIT_BRANCH} branch'"
