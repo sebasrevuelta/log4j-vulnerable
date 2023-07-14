@@ -1,0 +1,8 @@
+com.mycompany.app:my-app:jar:1.0-SNAPSHOT
++- org.apache.logging.log4j:log4j-core:jar:2.6.1:compile
++- org.apache.logging.log4j:log4j-api:jar:2.6.1:compile
++- com.auth0:java-jwt:jar:3.18.0:compile
+|  \- com.fasterxml.jackson.core:jackson-databind:jar:2.11.0:runtime
+|     +- com.fasterxml.jackson.core:jackson-annotations:jar:2.11.0:runtime
+|     \- com.fasterxml.jackson.core:jackson-core:jar:2.11.0:runtime
+\- commons-codec:commons-codec:jar:1.10:compile
