@@ -12,7 +12,7 @@ import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTCreationException;
 
 //Test class
-public class HelloLog {
+public class HelloLog2 {
 
     private static final Logger logger = LogManager.getLogger();
 
