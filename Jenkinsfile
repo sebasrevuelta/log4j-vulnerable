@@ -1,3 +1,4 @@
+//It is a global library declared for Semgrep calls
 @Library('semgrep') _
 
 pipeline {
