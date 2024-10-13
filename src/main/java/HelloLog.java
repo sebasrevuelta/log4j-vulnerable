@@ -19,7 +19,7 @@ public class HelloLog {
     public static void main(String[] args) {
         String userInput = "${jndi:http://localhost/AAAA/BBBB}";
 
-        // passing user input into the logger, it is a log4j critical vuln
+        // passing user input into the logger, it is a log4j critical vulnerability
         logger.info("Test: "+userInput);
 
         // %m{nolookups} has no effect for the following line
