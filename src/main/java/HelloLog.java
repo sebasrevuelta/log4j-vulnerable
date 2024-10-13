@@ -29,7 +29,7 @@ public class HelloLog {
         logger.printf(Level.INFO,"Test: %s", userInput);
     }
 
-    public static byte[] bad1(String password) throws NoSuchAlgorithmException {
+    public static byte[] bad11(String password) throws NoSuchAlgorithmException {
         // ruleid: use-of-md5
         MessageDigest md5Digest = MessageDigest.getInstance("MD5"); // nosemgrep
         md5Digest.update(password.getBytes());
