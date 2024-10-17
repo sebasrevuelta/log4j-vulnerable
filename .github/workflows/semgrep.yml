@@ -55,4 +55,6 @@ jobs:
       uses: actions/download-artifact@v3
       with:
         name: mavendeptree 
-    - run: semgrep ci
+    - run: |
+        curl -O https://raw.githubusercontent.com/r2c-CSE/semgrep-utilities/append-license-findings/utilities/append-license-violations-to-json/append_license_findings.py
+        semgrep ci --supply-chain --json-output=results.json | python3 append_license_findings.py results.json
