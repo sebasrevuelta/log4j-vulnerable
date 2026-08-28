@@ -20,7 +20,7 @@ public class HelloLog {
         String userInput = "${jndi:http://localhost/AAAA/BBBB}";
 
         // passing user input into the logger, it is a log4j critical vulnerability
-        logger.info("Test: "+userInput);
+        logger.info("Test: "+userInput); // nosemgrep
 
         // %m{nolookups} has no effect for the following line
         logger.printf(Level.INFO,"Test: %s", userInput);
